@@ -1,10 +1,10 @@
 # Frisor
 
 ## To do:
-Design: 
-Api:
-DB:
-Frontend:
+Design:   
+Api:  
+DB:  
+Frontend:  
 
 ## Personer
 ### javascript:
