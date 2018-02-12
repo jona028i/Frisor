@@ -1,4 +1,4 @@
-# Frisor
+# Frisør
 
 ## To do:
 Design   
