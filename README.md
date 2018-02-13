@@ -1,5 +1,7 @@
 # Frisør
 
+<img src="hårknuden.svg">
+
 ## To do:
 Design   
 Api  
