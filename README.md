@@ -1,6 +1,6 @@
 # Frisør
 
-<img src="hårknuden.svg">
+<img src="hårknuden.svg" width="200">
 
 ## To do:
 Design   
