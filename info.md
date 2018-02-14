@@ -4,7 +4,7 @@ Hårknuden er en moderne frisør, som både tænker nyt og kreativt. Vi bestræb
 Gennem de seneste mange år, har vi arbejdet med både børne- og herreklip, og tilbyder alt inden for klipning, hårfarvning og generel hårpleje.
 
 
-## Om 
+## Om - Tekst
 
 Hårknuden drives af Ady Moussa, der har klippet gennem mange år. Med stor passion for Cut and Style, klipper vi dagligt både herre og damer. For os er det vigtigt at vores kunder får en god oplevelse hos os, mens de samtidig kommer herfra med et godt resultat.
 
