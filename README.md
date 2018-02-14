@@ -93,13 +93,32 @@
 - Design   
 - Api  
 - DB  
-- Frontend
--- Forside
--- Om os
--- Galleri
--- Booking
--- Login
+* Frontend
+	* Forside
+	* Om os
+	* Galleri
+	* Booking
+	* Login
 - Javascript  
+
+## Tjekliste
+### Backend
+* JSON
+	* Oprettelse samt indhold
+	* Udtræk på frontend
+* Database
+	* Oprettelse samt indhold
+	* Udtræk på backend(admin siden)
+	
+### Frontend
+* Wireframes
+* Forside (90%)
+* Om os (90%)
+* Galleri (90%)
+* Booking (90%)
+* Login/Admin (0%)
+* Tekstbehandling (100%)
+* Billedebehandling (100%)
 
 ## Personer
 ### javascript:
