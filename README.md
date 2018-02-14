@@ -90,11 +90,16 @@
 
 
 ## To do:
-Design   
-Api  
-DB  
-Frontend    
-Javascript  
+- Design   
+- Api  
+- DB  
+- Frontend
+-- Forside
+-- Om os
+-- Galleri
+-- Booking
+-- Login
+- Javascript  
 
 ## Personer
 ### javascript:
