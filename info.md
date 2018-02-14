@@ -13,4 +13,4 @@ Frisørsalonen drives af Ady Moussa, der har klippet gennem mange år. Med stor 
 
 - Ady Moussa: Ady er en garvet frisør, som har været i faget i 10 år og hele tiden udvikler sig og er glad for ny inspiration. 
 - Frank Goldmann: Meget vellidt, altid i godt humør. Rolig og velafbalanceret, god til at lytte. Yderst omhyggelig med alt hvad han foretager sig. Frank har været i faget i 3 år. 
-- Hanne Sørensen: En super dygtig og meget kreativ frisør, som sætter en stor ære i at yde det ypperste. Hanne har været i faget i 3 år.
+- Hanna Sørensen: En super dygtig og meget kreativ frisør, som sætter en stor ære i at yde det ypperste. Hanna har været i faget i 3 år.
