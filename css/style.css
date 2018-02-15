@@ -1,5 +1,5 @@
 main {
-    min-height:1600px;
+    min-height:1700px;
 }
 
 .carousel-item img  {
@@ -7,11 +7,21 @@ main {
     height: 500px;
 }
 
+nav img {
+    width:6%;
+}
+
 section h1 {
     text-align:center;
     margin-top:40px;
     margin-bottom:40px;
     border-bottom:1px solid rgba(0,0,0,0.5);
+}
+
+section h2 {
+    text-align:center;
+    margin-top:70px;
+    margin-bottom:40px;
 }
 
 .sektion-1 {
@@ -28,6 +38,11 @@ article p {
     margin-left:40px;
 }
 
+article h2 {
+    text-align: center;
+    display:inline;
+}
+
 .tid {
     background-color: lightgrey;
     width: 20%;
@@ -39,16 +54,20 @@ article p {
 
 .tid h3 {
     text-align:center;
-    border-bottom:1px solid rgba(0,0,0,0.5);
-    margin-bottom:20px;
+    margin-bottom:25px;
+}
+
+.tid p {
+    text-align:center;
+}
+
+.tid a {
+    margin-left:5px;
 }
 
 .open p {
     text-align:center;
-}
-
-.open a {
-    margin-left:5px;
+    border-bottom:1px solid rgba(0,0,0,0.5);
 }
 
 .arbejd div {
@@ -65,21 +84,17 @@ article p {
     display:block;
 }
 
-.arbejd h3 {
-    display:inline;
-    margin-right:80px;
-    margin-left:80px;
-}
-
 .gal {
     display:inline;
+    border-bottom:1px solid rgba(0,0,0,0.5);
 }
 
 .gal img {
     width:250px;
-    height:200px;
+    height:250px;
     display:block;
     margin-top:50px;
+    margin-bottom:50px;
 }
 
 .gal div {
@@ -88,16 +103,31 @@ article p {
     margin-left:70px;
 }
 
-.gal h3 {
-    display:inline;
-}
-
-iframe {
+video {
     margin-top:40px;
     margin-left:auto;
     margin-right:auto;
     display: block;
     width:60%;
+}
+
+form {
+    border-bottom:1px solid rgba(0,0,0,0.5);
+}
+
+form button {
+    margin-left:auto;
+    margin-right: auto;
+    display:block;
+    margin-top:40px;
+    margin-bottom:40px;
+}
+
+div input {
+    margin-left:auto;
+    margin-right: auto;
+    margin-top:40px;
+    display:block;
 }
 
 
