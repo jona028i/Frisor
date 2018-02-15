@@ -1,0 +1,11 @@
+#myCarousel img  {
+    width: 100%;
+    height: auto;
+}
+
+.card-img-top {
+    display: block;
+    width: auto;
+    height: 250px;
+    margin: auto;
+}
