@@ -1,0 +1,9 @@
+[
+    { "dag":"Mandag", "fra":"10", "til":"18", "status":"åbent" },
+    { "dag":"Tirsdag", "fra":"10", "til":"18", "status":"åbent" },
+    { "dag":"Onsdag", "fra":"10", "til":"18", "status":"åbent" },
+    { "dag":"Torsdag", "fra":"10", "til":"18", "status":"åbent" },
+    { "dag":"Fredag", "fra":"10", "til":"18", "status":"åbent" },
+    { "dag":"Lørdag", "fra":"10", "til":"18", "status":"åbent" },
+    { "dag":"Søndag", "fra":"10", "til":"18", "status":"lukket" }
+]

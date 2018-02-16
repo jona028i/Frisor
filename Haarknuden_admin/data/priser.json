@@ -1,0 +1,6 @@
+[
+    { "type":"Maskinklip", "pris":100 },
+    { "type":"Almindeligt klip", "pris":150 },
+    { "type":"Langt hår", "pris":200 },
+    { "type":"Barbering", "pris":225 }
+]

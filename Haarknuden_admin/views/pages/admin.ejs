@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="da">
+  <head>
+    <% include ../partials/head %>
+  </head>
+  <body>
+    <header>
+      <% include ../partials/header %>
+    </header>
+
+    <main>
+      <% if (showLogin == true) { %>
+        <form id="loginForm" class="col-4" method="post" action="">
+          <% if (typeof message !== "undefined" && message.length > 0) { %>
+            <div class="alert <%= messageType %> col-sm-12"><%= message %></div>
+          <% } %>
+          <div class="form-group">
+            <label for="exampleInputEmail2">Brugernavn</label>
+            <input type="text" name="brugernavn" class="form-control" id="exampleInputEmail2">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword2">Adgangskode</label>
+            <input type="password" name="kodeord" class="form-control" id="exampleInputPassword2">
+            <button type="submit" class="btn btn-primary">Log ind</button>
+          </div>
+        </form>
+      <% } %>
+
+      <% if (showInfo == true) { %>
+        <h3>Hej <%= user.navn %></h3>
+        <div id="infoBox">
+
+          <!-- aabningstider -->
+          <div id="aabningstider">
+            <form action="/aabningstider" method="post">
+              <h4>Rediger åbningstider</h4>
+
+              Dag:<br>
+              <select class="mainDropdown" onchange="updateTable(this, 'aab')">
+                <% aabningstider.forEach(function(tider) { %>
+                  <option value="<%= JSON.stringify(tider.id) %>"><%= tider.dag %></option>
+                <% }) %>
+
+              </select>
+              <br><br>
+
+              Dag:<br>
+              <input type="text" name="dag" value="<%= aabningstider[0].dag %>"><br>
+              Fra:<br>
+              <input type="text" name="fra" value="<%= aabningstider[0].fra %>"><br>
+              Til:<br>
+              <input type="text" name="til" value="<%= aabningstider[0].til %>"><br>
+              Status:<br>
+              <input type="text" name="status" value="<%= aabningstider[0].status %>"><br>
+              <br>
+              <input type="submit" class="gem" data-route="aabningstider" value="Gem">
+            </form>
+            <table>
+              <tr>
+                <th>dag</th>
+                <th>fra</th>
+                <th>til</th>
+                <th>status</th>
+              </tr>
+              <% aabningstider.forEach(function(tider) { %>
+                <tr>
+                  <td><%= tider.dag %></td>
+                  <td><%= tider.fra %></td>
+                  <td><%= tider.til %></td>
+                  <td><%= tider.status %></td>
+                </tr>
+              <% }) %>
+            </table>
+          </div>
+
+          <!-- ansatte -->
+          <div id="ansatte">
+            <form action="/">
+              <h4>Rediger medarbejder</h4>
+              Medarbejder:<br>
+              <select class="mainDropdown"  onchange="updateTable(this, 'ans')">
+                <% ansatte.forEach(function(ansat) { %>
+                  <option value="<%= JSON.stringify(ansat.id) %>"><%= ansat.navn %> <%= ansat.efternavn %></option>
+                <% }) %>
+              </select><br><br>
+
+              Navn:<br>
+              <input type="text" name="navn" value="<%= ansatte[0].navn %>"><br>
+              Efternavn:<br>
+              <input type="text" name="efternavn" value="<%= ansatte[0].efternavn %>"><br>
+              <br>
+              <input type="submit" class="gem"  data-route="ansatte" value="Gem">
+              <input type="submit" class="slet" value="Slet" onclick="sletFromDb(event, 'ans', this);">
+              <input type="submit" class="opret" value="New">
+            </form>
+            <table>
+              <tr>
+                <th>navn</th>
+                <th>efternavn</th>
+              </tr>
+              <% ansatte.forEach(function(ansat) { %>
+                <tr>
+                  <td><%= ansat.navn %></td>
+                  <td><%= ansat.efternavn %></td>
+                </tr>
+              <% }) %>
+            </table>
+          </div>
+
+          <!-- booking -->
+          <div id="booking">
+            <form action="/">
+              <h4>Rediger booking</h4>
+              Navn:<br>
+              <select class="mainDropdown" onchange="updateTable(this, 'boo')">
+                <% booking.forEach(function(booking) { %>
+                  <option value="<%= JSON.stringify(booking.id) %>"><%= booking.navn %></option>
+                <% }) %>
+              </select><br><br>
+
+              Navn:<br>
+              <input type="text" name="navn" value="<%= booking[0].navn %>"><br>
+              Dato:<br>
+              <input type="text" name="dato" value="<%= booking[0].dato %>"><br>
+              Telefon:<br>
+              <input type="text" name="telefon" value="<%= booking[0].telefon %>"><br>
+              E-mail:<br>
+              <input type="text" name="email" value="<%= booking[0].email %>"><br>
+              Ansat:<br>
+              <input type="text" name="ansat" value="<%= booking[0].ansat %>"><br>
+              <br>
+              <input type="submit" class="gem" data-route="booking" value="Gem">
+              <input type="submit" class="slet" value="Slet" onclick="sletFromDb(event, 'boo', this)">
+              <input type="submit" class="opret" value="New">
+            </form>
+
+            <table>
+              <tr>
+                <th>navn</th>
+                <th>dato</th>
+                <th>telefon</th>
+                <th>email</th>
+                <th>ansat</th>
+              </tr>
+              <% booking.forEach(function(booking) { %>
+                <tr>
+                  <td><%= booking.navn %></td>
+                  <td><%= booking.dato %></td>
+                  <td><%= booking.telefon %></td>
+                  <td><%= booking.email %></td>
+                  <td><%= booking.ansat %></td>
+                </tr>
+              <% }) %>
+            </table>
+          </div>
+
+          <!-- priser -->
+          <div id="priser">
+            <form action="/">
+              <h4>Rediger Priser</h4>
+              Klip:<br>
+              <select class="mainDropdown" onchange="updateTable(this, 'pri')">
+                <% priser.forEach(function(priser) { %>
+                  <option value="<%= JSON.stringify(priser.id) %>"><%= priser.type %></option>
+                <% }) %>
+              </select><br><br>
+
+              Type:<br>
+              <input type="text" name="type" value="<%= priser[0].type %>"><br>
+              Pris:<br>
+              <input type="text" name="pris" value="<%= priser[0].pris %>"><br>
+              <br>
+              <input type="submit" class="gem" data-route="priser" value="Gem">
+              <input type="submit" class="slet" value="Slet" onclick="sletFromDb(event, 'pri', this)">
+              <input type="submit" class="opret" value="New">
+            </form>
+
+            <table>
+              <tr>
+                <th>type</th>
+                <th>pris</th>
+              </tr>
+              <% priser.forEach(function(priser) { %>
+                <tr>
+                  <td><%= priser.type %></td>
+                  <td><%= priser.pris %></td>
+                </tr>
+              <% }) %>
+            </table>
+          </div>
+
+          <!-- produkter -->
+          <div id="produkter">
+            <form action="/">
+              <h4>Rediger Produkter</h4>
+              Produkt:<br>
+              <select class="mainDropdown" onchange="updateTable(this, 'pro')">
+                <% produkter.forEach(function(produkt) { %>
+                  <option value="<%= JSON.stringify(produkt.id) %>"><%= produkt.navn %></option>
+                <% }) %>
+              </select><br><br>
+
+              Navn:<br>
+              <input type="text" name="navn" value="<%= produkter[0].navn %>"><br>
+              Varenummer:<br>
+              <input type="text" name="varenr" value="<%= produkter[0].varenr %>"><br>
+              Pris:<br>
+              <input type="text" name="pris" value="<%= produkter[0].pris %>"><br>
+              Producent:<br>
+              <input type="text" name="producent" value="<%= produkter[0].producent %>"><br>
+              Beskrivelse:<br>
+              <input type="text" name="producent" value="<%= produkter[0].beskrivelse %>"></input><br>
+              <br>
+              <input type="submit" class="gem" data-route="produkter" value="Gem">
+              <input type="submit" class="slet" value="Slet" onclick="sletFromDb(event, 'pro', this)">
+              <input type="submit" class="opret" value="New">
+            </form>
+
+            <table>
+              <tr>
+                <th>varenr</th>
+                <th>pris</th>
+                <th>producent</th>
+                <th>navn</th>
+                <th>beskrivelse</th>
+              </tr>
+              <% produkter.forEach(function(produkt) { %>
+                <tr>
+                  <td><%= produkt.varenr %></td>
+                  <td><%= produkt.pris %></td>
+                  <td><%= produkt.producent %></td>
+                  <td><%= produkt.navn %></td>
+                  <td><%= produkt.beskrivelse %></td>
+                </tr>
+              <% }) %>
+            </table>
+          </div>
+        </div>
+      <% } %>
+    </main>
+
+    <footer>
+      <% include ../partials/footer %>
+    </footer>
+    <% include ../partials/scripts %>
+    <script src="js/admin.js"></script>
+  </body>
+</html>

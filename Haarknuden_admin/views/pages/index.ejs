@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="da">
+  <head>
+    <% include ../partials/head %>
+  </head>
+  <body>
+    <header>
+      <% include ../partials/header %>
+    </header>
+
+    <main>
+      <div class="container-fluid">
+        <div class="row justify-content-around">
+
+          <%# ansatte %>
+          <table>
+            <tr>
+              <th>navn</th>
+              <th>efternavn</th>
+            </tr>
+            <% ansatte.forEach(function(ansat) { %>
+              <tr>
+                <td><%= ansat.navn %></td>
+                <td><%= ansat.efternavn %></td>
+              </tr>
+            <% }) %>
+          </table>
+
+          <%# booking %>
+          <table>
+            <tr>
+              <th>navn</th>
+              <th>dato</th>
+              <th>telefon</th>
+              <th>email</th>
+              <th>ansat</th>
+            </tr>
+            <% booking.forEach(function(booking) { %>
+              <tr>
+                <td><%= booking.navn %></td>
+                <td><%= booking.dato %></td>
+                <td><%= booking.telefon %></td>
+                <td><%= booking.email %></td>
+                <td><%= booking.ansat %></td>
+              </tr>
+            <% }) %>
+          </table>
+
+          <%# aabningstider %>
+          <table>
+            <tr>
+              <th>dag</th>
+              <th>fra</th>
+              <th>til</th>
+              <th>status</th>
+            </tr>
+            <% aabningstider.forEach(function(tider) { %>
+              <tr>
+                <td><%= tider.dag %></td>
+                <td><%= tider.fra %></td>
+                <td><%= tider.til %></td>
+                <td><%= tider.status %></td>
+              </tr>
+            <% }) %>
+          </table>
+
+          <%# priser %>
+          <table>
+            <tr>
+              <th>type</th>
+              <th>pris</th>
+            </tr>
+            <% priser.forEach(function(pris) { %>
+              <tr>
+                <td><%= pris.type %></td>
+                <td><%= pris.pris %>kr</td>
+              </tr>
+            <% }) %>
+          </table>
+
+          <%# produkter %>
+          <table>
+            <tr>
+              <th>varenr</th>
+              <th>pris</th>
+              <th>producent</th>
+              <th>navn</th>
+              <th>beskrivelse</th>
+            </tr>
+            <% produkter.forEach(function(produkt) { %>
+              <tr>
+                <td><%= produkt.varenr %></td>
+                <td><%= produkt.pris %>kr</td>
+                <td><%= produkt.producent %></td>
+                <td><%= produkt.navn %></td>
+                <td><%= produkt.beskrivelse %></td>
+              </tr>
+            <% }) %>
+          </table>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <% include ../partials/footer %>
+    </footer>
+    <% include ../partials/scripts %>
+  </body>
+</html>
